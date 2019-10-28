@@ -214,10 +214,11 @@
 	</div>
 	<script>
 		
-        const url = 'https://docufixmail.herokuapp.com/add-user';
         async function handleSubmit(e) {
           let Email = document.querySelector('#email').value;
           console.log({Email})
+        const url = `https://docufixmail.herokuapp.com/add-user/${Email}`;
+		  
           axios.post(url, { Email })
           .then(function (response) {
           console.log(response);
@@ -229,6 +230,7 @@
 		setTimeout(() => {
 			document.getElementById("success").style.display="none";
 		}, 3000);
+		
 		}
 		
 
